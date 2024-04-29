@@ -1,0 +1,19 @@
+label {
+    margin-top: 10px;
+    font-size: 20px;
+}
+.btn-reg {
+    background-color: #6351ff;
+    margin-top: 25px;
+    width: 150px;
+    height: 60px;
+    font-size: 20px;
+    border: 0px solid;
+    border-radius: 8px;
+    color: #fff;
+    align-self: center;
+    transition-duration: 0.6s;
+}
+.btn-reg:hover {
+    background-color: #4c39fa;
+}

@@ -1,0 +1,25 @@
+.cont {
+    background-color: black;
+    height: 100%;
+    width: 250px;
+}
+.background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.background2 {
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.font {
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.font2 {
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+}

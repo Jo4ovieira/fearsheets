@@ -1,0 +1,112 @@
+* {
+    font-family: "Montserrat", sans-serif;
+}
+body {
+    margin: 0px;
+}
+div {
+    color: white;
+}
+/* Header */
+.cont {
+    background-color: #212429;
+}
+.header {
+    background-color: #1a1919;
+    height: 55px;
+    width: 100%;
+}
+.logo {
+    height: 55px;
+    width: 1em/5em;
+    padding:1em;
+    float:left;
+    display: flex;
+    justify-content: center;
+}
+.button {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1919;
+    font-size: 18px;
+    border: 0px;
+    height: 50px;
+    width: 1em/5em;
+    padding:1em;
+    float:left;
+    text-decoration: none;
+}
+.button:hover {
+    color: #242424;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6351ff;
+    font-size: 18px;
+    border: 0px;
+    height: 50px;
+    transition: 0.9s;
+    width: 1em/5em;
+    padding:1em;
+    float:left;
+    text-decoration: none;
+}
+.inline {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1em/5em;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #6351ff;
+}
+.access {
+    width: 1em/5em;
+    padding:1em;
+}
+.push-left {
+    margin-left: auto;
+}
+.soft-button {
+    color: #fff;
+    text-decoration: none;
+}
+.soft-button:hover {
+    color: #b368f8;
+    text-decoration: none;
+}
+.hello {
+    width: 1em/5em;
+    padding:1em;
+}
+
+/* Body */
+
+main {
+    background-color: #212429;
+    width: 100%;
+    height: 90vh;
+}
+
+/* Footer */
+
+.footer {
+    background-color: #1a1919;
+    height: 32px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    position: fixed;
+    width: 100%;
+}

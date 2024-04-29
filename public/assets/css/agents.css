@@ -1,0 +1,227 @@
+label {
+    margin-top: 10px;
+    margin-bottom: 2px;
+    font-size: 20px;
+}
+.btn-new {
+    display:inline-block;
+    margin-top: 5px;
+    background-color: #35ff68;
+    border: 0px solid;
+    border-radius: 3px;
+    padding: 8px;
+    transition: 0.4s;
+    text-decoration: none;
+    color: #000;
+}
+.btn-new:hover {
+    background-color: #00ec3b;
+    color: #fff;
+}
+.agents {
+    font-size: 30px;
+}
+.att-inp {
+    width: 50px;
+    height: 35px;
+    border-radius: 6px;
+    border: 0px solid;
+    text-align: center;
+}
+.tofix {
+    margin-top: 48px;
+}
+.teste {
+    margin-left: 20px;
+}
+.life {
+    color: rgb(255, 12, 12);
+}
+.san {
+    color: rgb(99, 99, 255);
+}
+.effort {
+    color: rgb(85, 247, 85);
+}
+i{
+    font-size: 14px;
+}
+.padFix{
+    padding-bottom: 30px;
+}
+.exp-box {
+    box-shadow: rgba(168, 61, 255, 0.35) 0px 1px 4px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.container-a {
+    background-repeat: no-repeat;
+    background-size: 300px 302px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 300px;
+    height: 302px;
+    margin-top: 10px;
+}
+.attr {
+    font-size: 30px;
+    transform: translate(-167%, 0%);
+    text-align: center;
+    border: 0;
+    outline: none;
+    position: absolute;
+    height: 88px;
+    width: 90px;
+}
+.attr-inp {
+    background-color: transparent;
+    color: #fff;
+    padding: 0 0 25px 0;
+    font-size: 2rem;
+    border: 0;
+    background-clip: padding-box;
+    appearance: none;
+}
+.agi {
+    margin-top: 11.2%;
+    margin-left: 90.75%;
+}
+.agi-s {
+    margin-top: 27.2%;
+    margin-left: 88.75%;
+    font-size: 12px;
+}
+.str {
+    margin-top: 31.2%;
+    margin-left: 59.2%;
+}
+.str-s {
+    margin-top: 47.2%;
+    margin-left: 57.2%;
+    font-size: 12px;
+}
+.int {
+    margin-top: 31.2%;
+    margin-left: 122.2%;
+}
+.int-s {
+    margin-top: 47.2%;
+    margin-left: 119.5%;
+    font-size: 11px;
+}
+.pre {
+    margin-top: 71.2%;
+    margin-left: 68.5%;
+}
+.pre-s {
+    margin-top: 86.2%;
+    margin-left: 66.2%;
+    font-size: 12px;
+}
+.vig {
+    margin-top: 71.2%;
+    margin-left: 113.2%;
+}
+.vig-s {
+    margin-top: 86.2%;
+    margin-left: 110.75%;
+    font-size: 12px;
+}
+.label-e {
+    margin-bottom: 10px;
+    font-size: 26px;
+    margin-top: 6px;
+}
+.container-e {
+    display: flex;
+}
+.exp {
+    border-radius: 4px;
+    padding: 10px 0px 18px 0px;
+    text-align: center;
+}
+.fix {
+    margin-bottom: 50px;
+}
+.btn-add {
+    background-color: #6351ff;
+    margin-top: 25px;
+    width: 150px;
+    height: 60px;
+    font-size: 20px;
+    border: 0px solid;
+    border-radius: 8px;
+    color: #fff;
+    align-self: center;
+    transition-duration: 0.6s;
+}
+.d20 {
+    font-size: 20px;
+}
+.warning {
+    color: #6351ff;
+}
+.exp-selector {
+    background-color: #1a1919;
+    border: 0px solid;
+    color: #fff;
+}
+.attack-box {
+    background-color: #1a1919;
+    border: 1px solid #fff;
+}
+.add-attack {
+    background-color: #1a1919;
+    color: #00ec3b;
+    cursor: pointer;
+}
+.input_atk {
+    display: block;
+    width: 100%;
+    padding: .415rem .85rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #1a1919;
+    background-clip: padding-box;
+    border: 0px solid;
+    border-bottom: 1px solid #fff;
+    border-radius: 2px;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    outline: none !important;
+    box-shadow: none;
+}
+.box-icon {
+    font-size: 20px;
+}
+.fix2 {
+    margin-bottom: 10px;
+}
+.label2 {
+    margin-top: 0px;
+}
+.discard-i {
+    color: red;
+    font-size: 16px;
+}
+.discard-b {
+    text-decoration: none;
+    background-color: #212429;
+}
+.marg {
+    margin-bottom: 10px;
+}
+.cards {
+    padding: 0%;
+    font-size: 15px;
+    cursor: pointer;
+    border: 1px solid #1c1e22;
+}
