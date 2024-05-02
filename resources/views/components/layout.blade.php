@@ -55,7 +55,7 @@
         </div>
     </main>
     <footer class="footer text-center">
-        FearSheets - 2024 | By João
+        FearSheets - 2024 | By João | Props to:<a href="https://ordemparanormal.com.br/" target="_blank">https://ordemparanormal.com.br/</a>
     </footer>
 </body>
 </html>
