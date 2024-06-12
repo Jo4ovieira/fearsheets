@@ -9,10 +9,10 @@ div {
 }
 /* Header */
 .cont {
-    background-color: #212429;
+    background-color: #000;
 }
 .header {
-    background-color: #1a1919;
+    background-color: #111111;
     height: 55px;
     width: 100%;
 }
@@ -29,7 +29,7 @@ div {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1a1919;
+    background-color: #111111;
     font-size: 18px;
     border: 0px;
     height: 50px;
@@ -39,11 +39,11 @@ div {
     text-decoration: none;
 }
 .button:hover {
-    color: #242424;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #6351ff;
+    background-color: #ff5656;
     font-size: 18px;
     border: 0px;
     height: 50px;
@@ -65,7 +65,7 @@ div {
     width: 1em/5em;
     height: 40px;
     border-radius: 100%;
-    background-color: #6351ff;
+    background-color: #ff5656;
 }
 .access {
     width: 1em/5em;
@@ -79,7 +79,7 @@ div {
     text-decoration: none;
 }
 .soft-button:hover {
-    color: #b368f8;
+    color: #ff5656;
     text-decoration: none;
 }
 .hello {
@@ -90,7 +90,7 @@ div {
 /* Body */
 
 main {
-    background-color: #212429;
+    background-color: #000;
     width: 100%;
     height: 90vh;
 }
@@ -98,7 +98,7 @@ main {
 /* Footer */
 
 .footer {
-    background-color: #1a1919;
+    background-color: #111111;
     height: 32px;
     color: #fff;
     display: flex;
@@ -109,4 +109,13 @@ main {
     height: 40px;
     position: fixed;
     width: 100%;
+}
+.float {
+    margin-right: 8px;
+}
+.custom-link {
+    color: #ff5656;
+}
+.custom-s{
+    text-decoration: none;
 }

@@ -6,16 +6,17 @@ label {
 .btn-new {
     display:inline-block;
     margin-top: 5px;
-    background-color: #35ff68;
+    background-color: #0ae741;
     border: 0px solid;
     border-radius: 3px;
     padding: 8px;
     transition: 0.4s;
     text-decoration: none;
     color: #000;
+    margin-right: -12px;
 }
 .btn-new:hover {
-    background-color: #00ec3b;
+    background-color: #1cff54;
     color: #fff;
 }
 .agents {
@@ -50,7 +51,7 @@ i{
     padding-bottom: 30px;
 }
 .exp-box {
-    box-shadow: rgba(168, 61, 255, 0.35) 0px 1px 4px;
+    box-shadow: rgba(255, 61, 61, 0.35) 0px 1px 4px;
     border-radius: 4px;
     margin-bottom: 10px;
 }
@@ -146,7 +147,7 @@ i{
     margin-bottom: 50px;
 }
 .btn-add {
-    background-color: #6351ff;
+    background-color: #ff5656;
     margin-top: 25px;
     width: 150px;
     height: 60px;
@@ -157,23 +158,26 @@ i{
     align-self: center;
     transition-duration: 0.6s;
 }
+.btn-add:hover {
+    background-color: #fa3939;
+}
 .d20 {
     font-size: 20px;
 }
 .warning {
-    color: #6351ff;
+    color: #ff5656;
 }
 .exp-selector {
-    background-color: #1a1919;
+    background-color: #000;
     border: 0px solid;
     color: #fff;
 }
 .attack-box {
-    background-color: #1a1919;
+    background-color: #111111;
     border: 1px solid #fff;
 }
 .add-attack {
-    background-color: #1a1919;
+    background-color: #111111;
     color: #00ec3b;
     cursor: pointer;
 }
@@ -188,7 +192,7 @@ i{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-color: #1a1919;
+    background-color: #111111;
     background-clip: padding-box;
     border: 0px solid;
     border-bottom: 1px solid #fff;
@@ -223,5 +227,8 @@ i{
     padding: 0%;
     font-size: 15px;
     cursor: pointer;
-    border: 1px solid #1c1e22;
+    border: 1px solid #111111;
+}
+.custom-link {
+    color: #ff5656;
 }

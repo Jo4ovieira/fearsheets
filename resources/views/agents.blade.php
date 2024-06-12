@@ -10,14 +10,14 @@
                     <span class="agents">{{Auth::user()->name}}'s agents</span>
                 </div>
                 <div class="col-lg-6 col-sm-6 col-md-6 col-6 text-end marg">
-                    <a href="/agents/create" class="btn-new"><i class="fa-solid fa-plus"></i> New</a>
+                    <a href="/agents/create" class="btn-new"><i class="fa-solid fa-plus"></i>New</a>
                 </div>
             @else
                 <div class="col-lg-6 col-sm-6 col-md-6 col-6 marg">
-                    <span class="agents">You must be <a href="/login">logged</a> to see your agents.</span>
+                    <span class="agents">You must be <a href="/login" class="custom-link">logged</a> to see your agents.</span>
                 </div>
                 <div class="col-lg-6 col-sm-6 col-md-6 col-6 text-end marg">
-                    <span>Don't have an account? <a href="/register">Create</a> one!</span>
+                    <span>Don't have an account? <a href="/register" class="custom-link">Create</a> one!</span>
                 </div>
             @endif
             @foreach ($agent as $a)
