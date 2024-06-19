@@ -290,24 +290,28 @@ function addAtack() {
     i_weapon.setAttribute("type", "text");
     i_weapon.setAttribute("class", "input_atk");
     i_weapon.setAttribute("name", "weapon[]");
+    i_weapon.setAttribute("placeholder", "Weapon");
     i_test.setAttribute("type", "text");
     i_test.setAttribute("class", "input_atk");
     i_test.setAttribute("name", "test[]");
+    i_test.setAttribute("placeholder", "Test");
     i_damage.setAttribute("type", "text");
     i_damage.setAttribute("class", "input_atk");
     i_damage.setAttribute("name", "damage[]");
+    i_damage.setAttribute("placeholder", "Damage");
     i_special.setAttribute("type", "text");
     i_special.setAttribute("class", "input_atk");
     i_special.setAttribute("name", "special[]");
+    i_special.setAttribute("placeholder", "Special");
     i_id_atk.setAttribute("type", "text");
     i_id_atk.setAttribute("name", "id_atk[]");
     i_id_atk.setAttribute("value", "add");
     i_id_atk.hidden = true;
 
-    d_weapon.setAttribute("class", "col-xs-3 col-lg-3 col-md-3 col-sm-3 col-3");
-    d_test.setAttribute("class", "col-xs-2 col-lg-2 col-md-2 col-sm-2 col-2");
-    d_damage.setAttribute("class", "col-xs-2 col-lg-2 col-md-2 col-sm-2 col-2");
-    d_especial.setAttribute("class", "col-xs-5 col-lg-5 col-md-5 col-sm-5 col-5");
+    d_weapon.setAttribute("class", "col-xs-3 col-lg-3 col-md-3 col-sm-4 col-4");
+    d_test.setAttribute("class", "col-xs-2 col-lg-2 col-md-2 col-sm-4 col-4");
+    d_damage.setAttribute("class", "col-xs-2 col-lg-2 col-md-2 col-sm-4 col-4");
+    d_especial.setAttribute("class", "col-xs-5 col-lg-5 col-md-5 col-sm-12 col-12");
 
     d_weapon.appendChild(i_weapon)
     d_test.appendChild(i_test)
@@ -336,24 +340,28 @@ function addRitual() {
     i_name.setAttribute("type", "text");
     i_name.setAttribute("class", "input_atk");
     i_name.setAttribute("name", "skill_name[]");
+    i_name.setAttribute("placeholder", "Name");
     i_cost.setAttribute("type", "text");
     i_cost.setAttribute("class", "input_atk");
     i_cost.setAttribute("name", "cost[]");
+    i_cost.setAttribute("placeholder", "Cost");
     i_page.setAttribute("type", "text");
     i_page.setAttribute("class", "input_atk");
     i_page.setAttribute("name", "page[]");
+    i_page.setAttribute("placeholder", "Page");
     i_description.setAttribute("type", "text");
     i_description.setAttribute("class", "input_atk");
     i_description.setAttribute("name", "description[]");
+    i_description.setAttribute("placeholder", "Description");
     i_id_rit.setAttribute("type", "text");
     i_id_rit.setAttribute("name", "id_sr[]");
     i_id_rit.setAttribute("value", "add");
     i_id_rit.hidden = true;
 
-    d_name.setAttribute("class", "col-xs-3 col-lg-3 col-md-3 col-sm-3 col-3");
-    d_cost.setAttribute("class", "col-xs-2 col-lg-2 col-md-2 col-sm-2 col-2");
-    d_page.setAttribute("class", "col-xs-2 col-lg-2 col-md-2 col-sm-2 col-2");
-    d_description.setAttribute("class", "col-xs-5 col-lg-5 col-md-5 col-sm-5 col-5");
+    d_name.setAttribute("class", "col-xs-3 col-lg-3 col-md-3 col-sm-6 col-6");
+    d_cost.setAttribute("class", "col-xs-2 col-lg-2 col-md-2 col-sm-3 col-3");
+    d_page.setAttribute("class", "col-xs-2 col-lg-2 col-md-2 col-sm-3 col-3");
+    d_description.setAttribute("class", "col-xs-5 col-lg-5 col-md-5 col-sm-12 col-12");
 
     d_name.appendChild(i_name)
     d_cost.appendChild(i_cost)
@@ -380,20 +388,23 @@ function addItem() {
     i_item.setAttribute("type", "text");
     i_item.setAttribute("class", "input_atk");
     i_item.setAttribute("name", "item[]");
+    i_item.setAttribute("placeholder", "Item");
     i_category.setAttribute("type", "text");
     i_category.setAttribute("class", "input_atk");
     i_category.setAttribute("name", "category[]");
+    i_category.setAttribute("placeholder", "Category");
     i_weight.setAttribute("type", "text");
     i_weight.setAttribute("class", "input_atk");
     i_weight.setAttribute("name", "weight[]");
+    i_weight.setAttribute("placeholder", "Weight");
     i_id_inv.setAttribute("type", "text");
     i_id_inv.setAttribute("name", "id_inv[]");
     i_id_inv.setAttribute("value", "add");
     i_id_inv.hidden = true;
 
-    d_item.setAttribute("class", "col-xs-7 col-lg-7 col-md-7 col-sm-7 col-7");
-    d_category.setAttribute("class", "col-xs-2 col-lg-2 col-md-2 col-sm-2 col-2");
-    d_weight.setAttribute("class", "col-xs-3 col-lg-3 col-md-3 col-sm-3 col-3");
+    d_item.setAttribute("class", "col-xs-7 col-lg-7 col-md-7 col-sm-12 col-12");
+    d_category.setAttribute("class", "col-xs-2 col-lg-2 col-md-2 col-sm-6 col-6");
+    d_weight.setAttribute("class", "col-xs-3 col-lg-3 col-md-3 col-sm-6 col-6");
 
     d_item.appendChild(i_item)
     d_category.appendChild(i_category)

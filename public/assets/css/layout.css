@@ -8,10 +8,22 @@ div {
     color: white;
 }
 /* Header */
+@media(max-width:700px){
+    .for-desktop{
+       display:none;
+     }
+}
+@media(min-width:700px){
+    .for-mobile{
+       display:none;
+     }
+}
 .cont {
     background-color: #000;
 }
 .header {
+    display: flex;
+    align-items: center;
     background-color: #111111;
     height: 55px;
     width: 100%;
@@ -19,60 +31,45 @@ div {
 .logo {
     height: 55px;
     width: 1em/5em;
-    padding:1em;
-    float:left;
+    padding: 1em;
+    float: left;
     display: flex;
     justify-content: center;
 }
-.button {
-    color: #fff;
+.btn-header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    float: left;
+    height: 100%;
+}
+.button {
+    color: #fff;
     background-color: #111111;
     font-size: 18px;
-    border: 0px;
-    height: 50px;
-    width: 1em/5em;
-    padding:1em;
-    float:left;
+    padding: 0.8em;
     text-decoration: none;
 }
 .button:hover {
     color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: #ff5656;
-    font-size: 18px;
-    border: 0px;
-    height: 50px;
     transition: 0.9s;
-    width: 1em/5em;
-    padding:1em;
-    float:left;
-    text-decoration: none;
 }
-.inline {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+.hello {
+    width: 1em/5em;
+    float: right;
+    padding: 1em;
 }
 .profile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-top: 0.5em;
     width: 1em/5em;
-    height: 40px;
+    float: right;
     border-radius: 100%;
     background-color: #ff5656;
 }
 .access {
     width: 1em/5em;
-    padding:1em;
-}
-.push-left {
-    margin-left: auto;
+    padding: 1em;
+    float: right;
 }
 .soft-button {
     color: #fff;
@@ -81,10 +78,6 @@ div {
 .soft-button:hover {
     color: #ff5656;
     text-decoration: none;
-}
-.hello {
-    width: 1em/5em;
-    padding:1em;
 }
 
 /* Body */
@@ -118,4 +111,14 @@ main {
 }
 .custom-s{
     text-decoration: none;
+}
+@media(max-width:700px){
+    .for-desktop-f{
+       display:none;
+     }
+}
+@media(min-width:700px){
+    .for-mobile-f{
+       display:none;
+     }
 }
