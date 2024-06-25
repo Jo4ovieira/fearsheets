@@ -20,9 +20,9 @@ class AgentsController extends Controller
         return view('agents', ['agent' => $post]);
     }
     public function addAgent(Request $r) {
-        $exp = Expertise::All();
+        $expertise = Expertise::All();
 
-        return view('addAgent', ['expertise' => $exp]);
+        return view('addAgent', compact('expertise'));
     }
     public function addAgent_action(Request $r) {
         $r->validate([

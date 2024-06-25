@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 
 class RegisterLoginController extends Controller
 {
@@ -45,7 +46,13 @@ class RegisterLoginController extends Controller
         ]);
 
         if(Auth::attempt($val)) {
-            return redirect(route('home'));
+            return redirect(route('agents'));
+        } else {
+            return Redirect::back()->withErrors(
+                [
+                    'password' => 'Wrong email or password.'
+                ]
+            );
         }
     }
     public function logout(Request $r) {

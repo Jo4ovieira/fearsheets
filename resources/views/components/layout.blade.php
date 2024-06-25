@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="{{ asset('assets/css/layout.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/'. Request::segment(1) .'.css') }}">
-        <script src="{{ asset('assets/js/'. Request::segment(1) .'.js') }}"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/'. Request::segment(1) .'.css') }}">
+        <script src="{{ asset('js/'. Request::segment(1) .'.js') }}"></script>
         <script src="https://kit.fontawesome.com/1f62ce0ae5.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,7 +81,7 @@
                 <span class="float">FearSheets - {{ date("Y") }} By <a href="https://www.linkedin.com/in/joao-vieira-bitencourt/" class="custom-s custom-link" target="_blank">João Vieira Bitencourt</a> | Props to: </span><a href="https://ordemparanormal.com.br/" class="custom-link" target="_blank">ordemparanormal.com.br</a>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 for-mobile-f text-center">
-                <span class="float">FearSheets - {{ date("Y") }} By <a href="https://www.linkedin.com/in/joao-vieira-bitencourt/" class="custom-s custom-link" target="_blank">João Vieira Bitencourt</a></span>
+                <span class="float"><a style="text-decoration: none; color: white;" href="terminal">F</a>earSheets - {{ date("Y") }} By <a href="https://www.linkedin.com/in/joao-vieira-bitencourt/" class="custom-s custom-link" target="_blank">João Vieira Bitencourt</a></span>
             </div>
         </footer>
     </body>
