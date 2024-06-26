@@ -14,7 +14,7 @@ use function PHPUnit\Framework\isNull;
 
 class AgentsController extends Controller
 {
-    public function agents(Request $r) {
+    public function index(Request $r) {
         $post = Agent::all();
 
         return view('agents', ['agent' => $post]);

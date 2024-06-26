@@ -81,7 +81,7 @@
                 <span class="float">FearSheets - {{ date("Y") }} By <a href="https://www.linkedin.com/in/joao-vieira-bitencourt/" class="custom-s custom-link" target="_blank">João Vieira Bitencourt</a> | Props to: </span><a href="https://ordemparanormal.com.br/" class="custom-link" target="_blank">ordemparanormal.com.br</a>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 for-mobile-f text-center">
-                <span class="float"><a style="text-decoration: none; color: white;" href="terminal">F</a>earSheets - {{ date("Y") }} By <a href="https://www.linkedin.com/in/joao-vieira-bitencourt/" class="custom-s custom-link" target="_blank">João Vieira Bitencourt</a></span>
+                <span class="float"><a style="text-decoration: none; color: white;" href="/terminal">F</a>earSheets - {{ date("Y") }} By <a href="https://www.linkedin.com/in/joao-vieira-bitencourt/" class="custom-s custom-link" target="_blank">João Vieira Bitencourt</a></span>
             </div>
         </footer>
     </body>

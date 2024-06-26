@@ -19,7 +19,7 @@ div {
      }
 }
 .cont {
-    background-color: #000;
+    background-color: #000000;
 }
 .header {
     display: flex;
@@ -85,7 +85,7 @@ div {
 main {
     background-color: #000;
     width: 100%;
-    height: 90vh;
+    height: 92vh;
 }
 
 /* Footer */
