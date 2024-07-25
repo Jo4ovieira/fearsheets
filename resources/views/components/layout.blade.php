@@ -17,57 +17,29 @@
 
     <body>
         <nav class="header">
-            <div class="col-lg-12 col-sm-12 col-md-12 col-12 for-desktop">
+            <div class="col-lg-10 col-sm-10 col-md-10 col-10 ">
                 {{-- Logo --}}
-                <div class="logo">
+                <a href="/home" class="logo">
                     <img src="{{ asset('img/logo.png') }}" alt="">
-                </div>
+                </a>
                 {{-- Buttons --}}
                 <div class="btn-header">
-                    <a href="/home" class="button">Home</a>
                     <a href="/agents" class="button">Agents</a>
                 </div>
-                {{-- Access --}}
-                <div class="access">
-                    @if (Auth::check())
-                        <b><a href="/logout" class="soft-button">LogOut</a></b> |
-                    @else
-                        <b><a href="/login" class="soft-button">Login</a></b> |
-                    @endif
-                    <b><a href="/register" class="soft-button">Register</a></b>
-                </div>
-                {{-- Profile --}}
-                @if (Auth::check())
-                    <div class="profile">
-                        <img src="{{ asset('img/logo.png') }}" alt="">
-                    </div>
-                    <div class="hello">
-                        Hello, {{Auth::user()->name}}!
-                    </div>
-                @endif
             </div>
-
-            {{-- For mobile --}}
-
-            <div class="col-lg-12 col-sm-12 col-md-12 col-12 for-mobile">
-                {{-- Logo --}}
-                <div>
-                    <a href="/home" class="logo">
-                        <img src="{{ asset('img/logo.png') }}" alt="">
-                    </a>
-                </div>
-                {{-- Buttons --}}
-                <div class="btn-header">
-                    <a href="/agents" class="button">Agents</a>
-                </div>
-                {{-- Access --}}
+            <div class="col-lg-2 col-sm-2 col-md-2 col-2 ">
+                {{-- Access/profile --}}
                 <div class="access">
                     @if (Auth::check())
-                        <b><a href="/logout" class="soft-button">LogOut</a></b> |
+                        @if (Auth::user()->user_img != null)
+                            <a href="/profile/{{Auth::user()->id}}"><img class="profile" src="{{ asset(Auth::user()->user_img) }}" alt=""></a>
+                        @else
+                            <a href="/profile/{{Auth::user()->id}}"><img src="{{ asset('img/user.jpg') }}" alt=""></a>
+                        @endif
                     @else
                         <b><a href="/login" class="soft-button">Login</a></b> |
+                        <b><a href="/register" class="soft-button">Register</a></b>
                     @endif
-                    <b><a href="/register" class="soft-button">Register</a></b>
                 </div>
             </div>
         </nav>

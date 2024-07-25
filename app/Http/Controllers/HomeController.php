@@ -10,10 +10,10 @@ class HomeController extends Controller
     public function index(Request $r) {
         $AuthUser = Auth::user();
 
-        return view('home', compact('AuthUser'));
+        return view('index', compact('AuthUser'));
     }
 
-    public function redo(Request $r) {
+    public function redirect(Request $r) {
         return redirect('/home');
     }
 }

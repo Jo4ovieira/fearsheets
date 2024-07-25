@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <form method="POST" action="{{route('agent.addAgent_action')}}">
+    <form method="POST" action="{{route('agent.addAgent')}}">
         <div class="row">
             @csrf
             {{-- Retorno de erros da validation -> --}}
@@ -27,26 +27,9 @@
                 <label>Nex</label>
                 <div class="form-group">
                     <select name="nex" onchange="statsTotal()" class="input_atk input_atk-top input_sel" id="nex">
-                        <option value="0">5%</option>
-                        <option value="1">10%</option>
-                        <option value="2">15%</option>
-                        <option value="3">20%</option>
-                        <option value="4">25%</option>
-                        <option value="5">30%</option>
-                        <option value="6">35%</option>
-                        <option value="7">40%</option>
-                        <option value="8">45%</option>
-                        <option value="9">50%</option>
-                        <option value="10">55%</option>
-                        <option value="11">60%</option>
-                        <option value="12">65%</option>
-                        <option value="13">70%</option>
-                        <option value="14">75%</option>
-                        <option value="15">80%</option>
-                        <option value="16">85%</option>
-                        <option value="17">90%</option>
-                        <option value="18">95%</option>
-                        <option value="19">99%</option>
+                        @foreach ($nex as $n)
+                            <option value="{{$n->id}}">{{$n->nex}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -54,10 +37,9 @@
                 <label>Class</label>
                 <div class="form-group">
                     <select name="class" onchange="statsTotal()" class="input_atk input_atk-top input_sel" id="class">
-                        <option value="0">Other</option>
-                        <option value="1">Combatant</option>
-                        <option value="2">Specialist</option>
-                        <option value="3">Occultist</option>
+                        @foreach ($class as $c)
+                            <option value="{{$c->id}}">{{$c->class}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -181,7 +163,8 @@
                     </div>
                     @foreach ($expertise as $exp)
                     <div class="col-lg-2 exp">
-                        <i class="fa-solid fa-dice-d20 d20"></i> + <span id="{{$exp->expertise}}T">0</span> <br>
+                        <i class="fa-solid fa-dice-d20 d20"></i> + <span id="{{$exp->expertise}}T">0</span> +
+                        <input type="text" name="{{strtolower($exp->expertise)}}_ex" class="extra"> <br>
                         {{$exp->expertise}} <br>
                         <select class="exp-selector" onchange="expertisePoints()" name="{{ strtolower($exp->expertise) }}" id="{{$exp->expertise}}">
                             <option value="0">Untrained</option>
@@ -197,7 +180,7 @@
                 </div>
             </div>
             <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-12 text-start fix">
-                <button class="btn-add" title="register_action">Register</button>
+                <button class="btn-add" title="register_action">Save</button>
             </div>
         </div>
     </form>

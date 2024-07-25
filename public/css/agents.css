@@ -227,9 +227,16 @@ i{
     margin-bottom: 10px;
 }
 .cards {
-    font-size: 15px;
+    background-color: #202020;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
     cursor: pointer;
-    border: 1px solid #111111;
+}
+.box {
+    box-sizing: border-box;
+    border: 6px solid transparent;
+    background-clip:padding-box;
 }
 .custom-link {
     color: #ff5656;
@@ -243,4 +250,25 @@ i{
     .altered-labels{
        display:none;
      }
+}
+.extra {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    background-color: #111111;
+    background-clip: padding-box;
+    border: 0px solid;
+    border-bottom: 1px solid #fff;
+    border-radius: 2px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    outline: none !important;
+    box-shadow: none;
+}
+.card-fix {
+    margin-bottom: 10px;
+    margin-top: 5px;
 }

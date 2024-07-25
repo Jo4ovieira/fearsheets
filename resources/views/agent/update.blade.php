@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <form method="POST" action="{{route('agent.editAgent_action')}}">
+    <form method="POST" action="{{route('agent.updateAgent')}}">
         <div class="row">
             @csrf
             {{-- Retorno de erros da validation -> --}}
@@ -28,26 +28,9 @@
                 <label>Nex</label>
                 <div class="form-group">
                     <select name="nex" onchange="statsTotal()" class="input_atk input_atk-top input_sel" id="nex">
-                        <option {{$agent->nex == '0' ? "selected" : ""}} value="0">5%</option>
-                        <option {{$agent->nex == '1' ? "selected" : ""}} value="1">10%</option>
-                        <option {{$agent->nex == '2' ? "selected" : ""}} value="2">15%</option>
-                        <option {{$agent->nex == '3' ? "selected" : ""}} value="3">20%</option>
-                        <option {{$agent->nex == '4' ? "selected" : ""}} value="4">25%</option>
-                        <option {{$agent->nex == '5' ? "selected" : ""}} value="5">30%</option>
-                        <option {{$agent->nex == '6' ? "selected" : ""}} value="6">35%</option>
-                        <option {{$agent->nex == '7' ? "selected" : ""}} value="7">40%</option>
-                        <option {{$agent->nex == '8' ? "selected" : ""}} value="8">45%</option>
-                        <option {{$agent->nex == '9' ? "selected" : ""}} value="9">50%</option>
-                        <option {{$agent->nex == '10' ? "selected" : ""}} value="10">55%</option>
-                        <option {{$agent->nex == '11' ? "selected" : ""}} value="11">60%</option>
-                        <option {{$agent->nex == '12' ? "selected" : ""}} value="12">65%</option>
-                        <option {{$agent->nex == '13' ? "selected" : ""}} value="13">70%</option>
-                        <option {{$agent->nex == '14' ? "selected" : ""}} value="14">75%</option>
-                        <option {{$agent->nex == '15' ? "selected" : ""}} value="15">80%</option>
-                        <option {{$agent->nex == '16' ? "selected" : ""}} value="16">85%</option>
-                        <option {{$agent->nex == '17' ? "selected" : ""}} value="17">90%</option>
-                        <option {{$agent->nex == '18' ? "selected" : ""}} value="18">95%</option>
-                        <option {{$agent->nex == '19' ? "selected" : ""}} value="19">99%</option>
+                        @foreach ($nex as $n)
+                            <option {{$agent->nex == $n->id ? "selected" : ""}} value="{{$n->id}}">{{$n->nex}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -55,10 +38,9 @@
                 <label>Class</label>
                 <div class="form-group">
                     <select name="class" onchange="statsTotal()" class="input_atk input_atk-top input_sel" id="class">
-                        <option {{$agent->class == '0' ? "selected" : ""}} value="0">Other</option>
-                        <option {{$agent->class == '1' ? "selected" : ""}} value="1">Combatant</option>
-                        <option {{$agent->class == '2' ? "selected" : ""}} value="2">Specialist</option>
-                        <option {{$agent->class == '3' ? "selected" : ""}} value="3">Occultist</option>
+                        @foreach ($class as $c)
+                            <option {{$agent->class == $c->id ? "selected" : ""}} value="{{$c->id}}">{{$c->class}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -175,14 +157,15 @@
                     <input type="text" class="input_atk input_atk-top" value="{{$agent->resistances}}" name="resistances">
                 </div>
             </div>
-            <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-12 exp-box">
+            <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-12 exp-box fix">
                 <div class="row">
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
-                        <label class="label-e">Expertise <i class="fa-solid afa-square-check box-icon"></i></label>
+                        <label class="label-e">Expertise <i class="fa-regular fa-square-check box-icon"></i></label>
                     </div>
                     @foreach ($expertise as $exp)
                     <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-2 exp">
-                        <i class="fa-solid fa-dice-d20 d20"></i> + <span id="{{$exp->expertise}}T">0</span> <br>
+                        <i class="fa-solid fa-dice-d20 d20"></i> + <span id="{{$exp->expertise}}T">0</span> +
+                        <input type="text" name="{{strtolower($exp->expertise)}}_ex" value="{{ $agent->{strtolower($exp->expertise) . '_ex'} }}" class="extra"> <br>
                         {{$exp->expertise}} <br>
                         <select class="exp-selector" onchange="expertisePoints()" name="{{ strtolower($exp->expertise) }}" id="{{$exp->expertise}}">
                             <option {{$agent->{strtolower($exp->expertise)} == '0' ? "selected" : ""}} value="0">Untrained</option>
@@ -297,7 +280,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-12 exp-box">
+            <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-12 exp-box fix">
                 <div class="row">
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
                         <label class="label-e">Inventory <i class="fa-solid fa-box box-icon"></i></label>
@@ -379,8 +362,24 @@
                     </div>
                 </div>
             </div>
+            <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-12 exp-box">
+                <div class="row">
+                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
+                        <label class="label-e">Privacy <i class="fa-solid fa-shield-halved box-icon"></i></label>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4">
+                        <label>Hide this agent from your profile?</label>
+                        <div class="form-group">
+                            <select name="private" class="input_atk input_atk-top input_sel">
+                                <option {{$agent->private == 0 ? "selected" : ""}} value="0">Yes</option>
+                                <option {{$agent->private == 1 ? "selected" : ""}} value="1">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-12 text-start fix">
-                <button class="btn-add" title="register_action">Register</button>
+                <button class="btn-add" title="register_action">Save</button>
             </div>
         </div>
     </form>

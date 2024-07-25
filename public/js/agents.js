@@ -5,11 +5,12 @@ function statsTotal() {
     var pre = document.getElementById('presence').value
     var vig = document.getElementById('vigor').value
     // Combatant
-    if(cl == 1) {
+    if(cl == 2) {
         total = 20 + parseInt(vig)
         totalPerNex = 4 + parseInt(vig)
-        if(nex > 0) {
-            extraLifeNex = totalPerNex * nex
+        if(nex > 1) {
+            realnex = parseInt(nex) - 1
+            extraLifeNex = totalPerNex * realnex
             totalps = total + extraLifeNex
             document.getElementById('life').value = totalps
         } else {
@@ -18,11 +19,12 @@ function statsTotal() {
         document.getElementById('lpNex').textContent = totalPerNex
     }
     // Specialist
-    if(cl == 2) {
+    if(cl == 3) {
         total = 16 + parseInt(vig)
         totalPerNex = 3 + parseInt(vig)
-        if(nex > 0) {
-            extraLifeNex = totalPerNex * nex
+        if(nex > 1) {
+            realnex = parseInt(nex) - 1
+            extraLifeNex = totalPerNex * realnex
             totalps = total + extraLifeNex
             document.getElementById('life').value = totalps
         } else {
@@ -31,11 +33,12 @@ function statsTotal() {
         document.getElementById('lpNex').textContent = totalPerNex
     }
     // Occultist
-    if(cl == 3) {
+    if(cl == 4) {
         total = 12 + parseInt(vig)
         totalPerNex = 2 + parseInt(vig)
-        if(nex > 0) {
-            extraLifeNex = totalPerNex * nex
+        if(nex > 1) {
+            realnex = parseInt(nex) - 1
+            extraLifeNex = totalPerNex * realnex
             totalps = total + extraLifeNex
             document.getElementById('life').value = totalps
         } else {
@@ -47,11 +50,12 @@ function statsTotal() {
     //Sanity
 
     // Combatant
-    if(cl == 1) {
+    if(cl == 2) {
         total = 12
         totalPerNex = 3
-        if(nex > 0) {
-            extraLifeNex = totalPerNex * nex
+        if(nex > 1) {
+            realnex = parseInt(nex) - 1
+            extraLifeNex = totalPerNex * realnex
             totalps = total + extraLifeNex
             document.getElementById('san').value = totalps
         } else {
@@ -60,11 +64,12 @@ function statsTotal() {
         document.getElementById('sanNex').textContent = totalPerNex
     }
     // Specialist
-    if(cl == 2) {
+    if(cl == 3) {
         total = 16
         totalPerNex = 4
-        if(nex > 0) {
-            extraLifeNex = totalPerNex * nex
+        if(nex > 1) {
+            realnex = parseInt(nex) - 1
+            extraLifeNex = totalPerNex * realnex
             totalps = total + extraLifeNex
             document.getElementById('san').value = totalps
         } else {
@@ -73,11 +78,12 @@ function statsTotal() {
         document.getElementById('sanNex').textContent = totalPerNex
     }
     // Occultist
-    if(cl == 3) {
+    if(cl == 4) {
         total = 20
         totalPerNex = 5
-        if(nex > 0) {
-            extraLifeNex = totalPerNex * nex
+        if(nex > 1) {
+            realnex = parseInt(nex) - 1
+            extraLifeNex = totalPerNex * realnex
             totalps = total + extraLifeNex
             document.getElementById('san').value = totalps
         } else {
@@ -89,11 +95,12 @@ function statsTotal() {
     //Effort
 
     // Combatant
-    if(cl == 1) {
+    if(cl == 2) {
         total = 2 + parseInt(pre)
         totalPerNex = 2 + parseInt(pre)
-        if(nex > 0) {
-            extraLifeNex = totalPerNex * nex
+        if(nex > 1) {
+            realnex = parseInt(nex) - 1
+            extraLifeNex = totalPerNex * realnex
             totalps = total + extraLifeNex
             document.getElementById('effort').value = totalps
         } else {
@@ -102,11 +109,12 @@ function statsTotal() {
         document.getElementById('effNex').textContent = totalPerNex
     }
     // Specialist
-    if(cl == 2) {
+    if(cl == 3) {
         total = 3 + parseInt(pre)
         totalPerNex = 3 + parseInt(pre)
-        if(nex > 0) {
-            extraLifeNex = totalPerNex * nex
+        if(nex > 1) {
+            realnex = parseInt(nex) - 1
+            extraLifeNex = totalPerNex * realnex
             totalps = total + extraLifeNex
             document.getElementById('effort').value = totalps
         } else {
@@ -115,11 +123,12 @@ function statsTotal() {
         document.getElementById('effNex').textContent = totalPerNex
     }
     // Occultist
-    if(cl == 3) {
+    if(cl == 4) {
         total = 4 + parseInt(pre)
         totalPerNex = 4 + parseInt(pre)
-        if(nex > 0) {
-            extraLifeNex = totalPerNex * nex
+        if(nex > 1) {
+            realnex = parseInt(nex) - 1
+            extraLifeNex = totalPerNex * realnex
             totalps = total + extraLifeNex
             document.getElementById('effort').value = totalps
         } else {

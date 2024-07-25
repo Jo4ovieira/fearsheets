@@ -3,6 +3,7 @@
 }
 body {
     margin: 0px;
+    background-color: #000;
 }
 div {
     color: white;
@@ -60,11 +61,8 @@ div {
     padding: 1em;
 }
 .profile {
-    margin-top: 0.5em;
-    width: 1em/5em;
-    float: right;
+    width: 2.8rem;
     border-radius: 100%;
-    background-color: #ff5656;
 }
 .access {
     width: 1em/5em;
@@ -78,14 +76,6 @@ div {
 .soft-button:hover {
     color: #ff5656;
     text-decoration: none;
-}
-
-/* Body */
-
-main {
-    background-color: #000;
-    width: 100%;
-    height: 92vh;
 }
 
 /* Footer */

@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container">
-        <form method="POST" action="{{route('login.login_action')}}">
+        <form method="POST" action="{{route('login.loginAction')}}">
             <div class="center-align col-lg-8 col-md-8 col-8 col-sm-8">
                 <div class="d-flex flex-column align-items-center justify-content-center">
                     <div class="col-lg-12 col-md-12 col-12 col-sm-12 login-align text-center">
