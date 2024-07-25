@@ -34,7 +34,7 @@
                         @if (Auth::user()->user_img != null)
                             <a href="/profile/{{Auth::user()->id}}"><img class="profile" src="{{ asset(Auth::user()->user_img) }}" alt=""></a>
                         @else
-                            <a href="/profile/{{Auth::user()->id}}"><img src="{{ asset('img/user.jpg') }}" alt=""></a>
+                            <a href="/profile/{{Auth::user()->id}}"><img class="profile" src="{{ asset('img/user.jpg') }}" alt=""></a>
                         @endif
                     @else
                         <b><a href="/login" class="soft-button">Login</a></b> |
