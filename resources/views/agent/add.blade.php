@@ -52,15 +52,15 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                 <div class="container-a">
                     <span class="attr agi-s">Agility</span>
-                    <input required="" class="attr agi attr-inp" onclick="baseDefense()" onchange="baseDefense()" onkeyup="baseDefense()" type="number" min="-25" max="25" value="1" id="agility" name="agility" title="Agility">
+                    <input required="" class="attr agi attr-inp" onclick="baseDefense()" onchange="baseDefense(), D20agi()" onkeyup="baseDefense(), D20agi()" type="number" min="-25" max="25" value="1" id="agility" name="agility" title="Agility">
                     <span class="attr str-s">Strength</span>
-                    <input required="" class="attr str attr-inp" onchange="statsTotal()" onkeyup="statsTotal()" type="number" min="-25" max="25" value="1" id="strength" name="strength" title="Strength">
+                    <input required="" class="attr str attr-inp" onchange="statsTotal(), D20str()" onkeyup="statsTotal(), D20str()" type="number" min="-25" max="25" value="1" id="strength" name="strength" title="Strength">
                     <span class="attr int-s">Intelligence</span>
-                    <input required="" class="attr int attr-inp" onchange="statsTotal()" onkeyup="statsTotal()" type="number" min="-25" max="25" value="1" id="intelligence" name="intelligence" title="Intelligence">
+                    <input required="" class="attr int attr-inp" onchange="statsTotal(), D20int()" onkeyup="statsTotal(), D20int()" type="number" min="-25" max="25" value="1" id="intelligence" name="intelligence" title="Intelligence">
                     <span class="attr pre-s">Presence</span>
-                    <input required="" class="attr pre attr-inp" onchange="statsTotal()" onkeyup="statsTotal()" type="number" min="-25" max="25" value="1" id="presence" name="presence" title="Presence">
+                    <input required="" class="attr pre attr-inp" onchange="statsTotal(), D20pre()" onkeyup="statsTotal(), D20pre()" type="number" min="-25" max="25" value="1" id="presence" name="presence" title="Presence">
                     <span class="attr vig-s">Vigor</span>
-                    <input required="" class="attr vig attr-inp" onchange="statsTotal()" onkeyup="statsTotal()" type="number" min="-25" max="25" value="1" id="vigor" name="vigor" title="Vigor">
+                    <input required="" class="attr vig attr-inp" onchange="statsTotal(), D20vig()" onkeyup="statsTotal(), D20vig()" type="number" min="-25" max="25" value="1" id="vigor" name="vigor" title="Vigor">
                     <img src="{{ asset('img/pentagrama.png') }}" alt="pentagram">
                 </div>
             </div>
@@ -163,6 +163,7 @@
                     </div>
                     @foreach ($expertise as $exp)
                     <div class="col-lg-2 exp">
+                        <label class="attr-{{$exp->attribute_used}}"></label>
                         <i class="fa-solid fa-dice-d20 d20"></i> + <span id="{{$exp->expertise}}T">0</span> +
                         <input type="text" name="{{strtolower($exp->expertise)}}_ex" class="extra"> <br>
                         {{$exp->expertise}} <br>
