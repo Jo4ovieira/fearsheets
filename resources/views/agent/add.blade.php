@@ -23,12 +23,24 @@
                     <input type="text" class="input_atk input_atk-top" name="agent_name" placeholder="Maquimbo Mcoy...">
                 </div>
             </div>
-            <div class="col-6 col-sm-6 col-md-2 col-lg-1 col-xl-1">
+            <div class="col-6 col-sm-6 col-md-2 col-lg-1 col-xl-1" id="nex_box">
                 <label>Nex</label>
                 <div class="form-group">
-                    <select name="nex" onchange="statsTotal()" class="input_atk input_atk-top input_sel" id="nex">
+                    <select name="nex" onchange="statsTotal(), MainElement()" class="input_atk input_atk-top input_sel" id="nex">
                         @foreach ($nex as $n)
                             <option value="{{$n->id}}">{{$n->nex}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-2 col-lg-1 col-xl-1" style="display: none;" id="level_box">
+                <label>Level</label>
+                <div class="form-group">
+                    <select name="nex" onchange="statsTotal()" class="input_atk input_atk-top input_sel" id="level" disabled="disabled">
+                        @foreach ($nex as $n)
+                            @if ($n->id <= 4)
+                                <option value="{{$n->id}}">{{$n->id}}</option>
+                            @endif
                         @endforeach
                     </select>
                 </div>
@@ -162,21 +174,41 @@
                         <label class="label-e">Expertise</label>
                     </div>
                     @foreach ($expertise as $exp)
-                    <div class="col-lg-2 exp">
-                        <label class="attr-{{$exp->attribute_used}}"></label>
-                        <i class="fa-solid fa-dice-d20 d20"></i> + <span id="{{$exp->expertise}}T">0</span> +
-                        <input type="text" name="{{strtolower($exp->expertise)}}_ex" class="extra"> <br>
-                        {{$exp->expertise}} <br>
-                        <select class="exp-selector" onchange="expertisePoints()" name="{{ strtolower($exp->expertise) }}" id="{{$exp->expertise}}">
-                            <option value="0">Untrained</option>
-                            <option value="1">Trained</option>
-                            <option value="2">Veteran</option>
-                            <option value="3">Expert</option>
-                        </select>
-                    </div>
+                        <div class="col-lg-2 exp">
+                            <label class="attr-{{$exp->attribute_used}}"></label>
+                            <i class="fa-solid fa-dice-d20 d20"></i> + <span id="{{$exp->expertise}}T">0</span> +
+                            <input type="text" name="{{strtolower($exp->expertise)}}_ex" class="extra"> <br>
+                            {{$exp->expertise}} <br>
+                            <select class="exp-selector" onchange="expertisePoints()" name="{{ strtolower($exp->expertise) }}" id="{{$exp->expertise}}">
+                                <option value="0">Untrained</option>
+                                <option value="1">Trained</option>
+                                <option value="2">Veteran</option>
+                                <option value="3">Expert</option>
+                            </select>
+                        </div>
                     @endforeach
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-12 text-start">
                         <i class="fa-solid fa-triangle-exclamation warning"></i> You have <span id="expertisePoints"></span> expertise points to use<span id="expertiseObligated"></span> <i class="fa-solid fa-triangle-exclamation warning"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-12 exp-box" style="display: none;" id="paranormal">
+                <div class="row">
+                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
+                        <label class="label-e">Paranormal <i class="fa-regular fa-eye box-icon"></i></label>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4">
+                        <label>Main Element</label>
+                        <div class="form-group">
+                            <select name="element" class="input_atk input_atk-top input_sel">
+                                <option value="0">None</option>
+                                @foreach ($element as $e)
+                                    @if ($e->id <= 4)
+                                        <option value="{{$e->id}}">{{$e->element}}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>

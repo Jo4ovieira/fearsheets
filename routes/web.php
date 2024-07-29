@@ -33,6 +33,7 @@ Route::get('/agents/edit/{id}', [AgentsController::class, 'update'])->name('upda
 Route::post('/agents/edit', [AgentsController::class, 'updateAgent'])->name('agent.updateAgent');
 
 //delete agent
+Route::get('/agents/deleteagent/{id}', [AgentsController::class, 'deleteAgent'])->name('agent.deleteAgent');
 Route::get('/agents/deleteatk/{id}', [AgentsController::class, 'deleteAtk'])->name('agent.deleteAtk');
 Route::get('/agents/deletesr/{id}', [AgentsController::class, 'deleteSr'])->name('agent.deleteSr');
 Route::get('/agents/deleteinv/{id}', [AgentsController::class, 'deleteInv'])->name('agent.deleteInv');

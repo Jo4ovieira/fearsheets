@@ -86,5 +86,6 @@ class Agent extends Model
         'tactic_ex',
         'technology_ex',
         'will_ex',
+        'element',
     ];
 }

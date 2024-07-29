@@ -1,9 +1,26 @@
 function statsTotal() {
     var cl = document.getElementById('class').value
     var nex = document.getElementById('nex').value
+    var level = document.getElementById('level').value
     var int = document.getElementById('intelligence').value
     var pre = document.getElementById('presence').value
     var vig = document.getElementById('vigor').value
+
+    // Survivor's level
+    if(cl == 5) {
+        document.getElementById('nex_box').style.display = 'none'
+        document.getElementById('level_box').style.display = 'block'
+        document.getElementById('nex').setAttribute("disabled", "disabled")
+        document.getElementById('level').removeAttribute("disabled")
+    } else {
+        document.getElementById('nex_box').style.display = 'block'
+        document.getElementById('level_box').style.display = 'none'
+        document.getElementById('nex').removeAttribute("disabled")
+        document.getElementById('level').setAttribute("disabled", "disabled")
+    }
+
+    //Life points
+
     // Combatant
     if(cl == 2) {
         total = 20 + parseInt(vig)
@@ -38,6 +55,20 @@ function statsTotal() {
         totalPerNex = 2 + parseInt(vig)
         if(nex > 1) {
             realnex = parseInt(nex) - 1
+            extraLifeNex = totalPerNex * realnex
+            totalps = total + extraLifeNex
+            document.getElementById('life').value = totalps
+        } else {
+            document.getElementById('life').value = total
+        }
+        document.getElementById('lpNex').textContent = totalPerNex
+    }
+    // Survivor
+    if(cl == 5) {
+        total = 8 + parseInt(vig)
+        totalPerNex = 2
+        if(level > 1) {
+            realnex = parseInt(level) - 1
             extraLifeNex = totalPerNex * realnex
             totalps = total + extraLifeNex
             document.getElementById('life').value = totalps
@@ -91,6 +122,20 @@ function statsTotal() {
         }
         document.getElementById('sanNex').textContent = totalPerNex
     }
+    // Survivor
+    if(cl == 5) {
+        total = 8
+        totalPerNex = 2
+        if(level > 1) {
+            realnex = parseInt(level) - 1
+            extraLifeNex = totalPerNex * realnex
+            totalps = total + extraLifeNex
+            document.getElementById('san').value = totalps
+        } else {
+            document.getElementById('san').value = total
+        }
+        document.getElementById('sanNex').textContent = totalPerNex
+    }
 
     //Effort
 
@@ -136,19 +181,37 @@ function statsTotal() {
         }
         document.getElementById('effNex').textContent = totalPerNex
     }
+    // Survivor
+    if(cl == 5) {
+        total = 2 + parseInt(pre)
+        totalPerNex = 1
+        if(level > 1) {
+            realnex = parseInt(level) - 1
+            extraLifeNex = totalPerNex * realnex
+            totalps = total + extraLifeNex
+            document.getElementById('effort').value = totalps
+        } else {
+            document.getElementById('effort').value = total
+        }
+        document.getElementById('effNex').textContent = totalPerNex
+    }
 
     // Proficiencies
 
     // Combatant
-    if(cl == 1) {
+    if(cl == 2) {
         document.getElementById('prof').textContent = "Simple weapons, Tactical weapons and light protections"
     }
     // Specialist
-    if(cl == 2) {
+    if(cl == 3) {
         document.getElementById('prof').textContent = "Simple weapons and light protections"
     }
     // Occultist
-    if(cl == 3) {
+    if(cl == 4) {
+        document.getElementById('prof').textContent = "Simple weapons"
+    }
+    // Survivor
+    if(cl == 5) {
         document.getElementById('prof').textContent = "Simple weapons"
     }
 
@@ -170,6 +233,11 @@ function statsTotal() {
         tps = 3 + parseInt(int)
         document.getElementById('expertisePoints').textContent = tps
         document.getElementById('expertiseObligated').textContent = ", and you must have Occultism and Will"
+    }
+    // Survivor
+    if(cl == 5) {
+        tps = 1 + parseInt(int)
+        document.getElementById('expertisePoints').textContent = tps
     }
 }
 
@@ -249,8 +317,22 @@ function D20vig() {
     }
 }
 
+function MainElement() {
+    var nex = document.getElementById('nex').value
+
+    if(nex >= 10) {
+        document.getElementById('paranormal').style.display = 'block'
+    } else {
+        document.getElementById('paranormal').style.display = 'none'
+    }
+}
+
 window.onload = function exptsPatentAndWgt() {
     baseDefense()
+
+    statsTotal()
+
+    MainElement()
 
     D20agi()
     D20str()

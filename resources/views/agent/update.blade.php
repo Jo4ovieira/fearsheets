@@ -24,12 +24,24 @@
                     <input type="text" class="input_atk input_atk-top" value="{{$agent->agent_name}}" name="agent_name" placeholder="Maquimbo Mcoy...">
                 </div>
             </div>
-            <div class="col-6 col-sm-6 col-md-2 col-lg-1 col-xl-1">
+            <div class="col-6 col-sm-6 col-md-2 col-lg-1 col-xl-1" id="nex_box">
                 <label>Nex</label>
                 <div class="form-group">
-                    <select name="nex" onchange="statsTotal()" class="input_atk input_atk-top input_sel" id="nex">
+                    <select name="nex" onchange="statsTotal(), MainElement()" class="input_atk input_atk-top input_sel" id="nex">
                         @foreach ($nex as $n)
                             <option {{$agent->nex == $n->id ? "selected" : ""}} value="{{$n->id}}">{{$n->nex}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-2 col-lg-1 col-xl-1" style="display: none;" id="level_box">
+                <label>Level</label>
+                <div class="form-group">
+                    <select name="nex" onchange="statsTotal()" class="input_atk input_atk-top input_sel" id="level" disabled="disabled">
+                        @foreach ($nex as $n)
+                            @if ($n->id <= 4)
+                                <option {{$agent->nex == $n->id ? "selected" : ""}} value="{{$n->id}}">{{$n->id}}</option>
+                            @endif
                         @endforeach
                     </select>
                 </div>
@@ -363,10 +375,30 @@
                     </div>
                 </div>
             </div>
+            <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-12 exp-box fix" style="display: none;" id="paranormal">
+                <div class="row">
+                    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
+                        <label class="label-e">Paranormal <i class="fa-regular fa-eye box-icon"></i></label>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4">
+                        <label>Main Element</label>
+                        <div class="form-group">
+                            <select name="element" class="input_atk input_atk-top input_sel">
+                                <option {{$agent->element == 0 ? "selected" : ""}} value="0">None</option>
+                                @foreach ($element as $e)
+                                    @if ($e->id <= 4)
+                                        <option {{$agent->element == $e->id ? "selected" : ""}} value="{{$e->id}}">{{$e->element}}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-12 exp-box">
                 <div class="row">
                     <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
-                        <label class="label-e">Privacy <i class="fa-solid fa-shield-halved box-icon"></i></label>
+                        <label class="label-e">Config <i class="fa-solid fa-gear box-icon"></i></label>
                     </div>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4">
                         <label>Hide this agent from your profile?</label>
@@ -376,6 +408,9 @@
                                 <option {{$agent->private == 1 ? "selected" : ""}} value="1">No</option>
                             </select>
                         </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-end">
+                        <a href="/agents/deleteagent/{{$agent->id}}" class="custom-link">Delete Agent?</a>
                     </div>
                 </div>
             </div>

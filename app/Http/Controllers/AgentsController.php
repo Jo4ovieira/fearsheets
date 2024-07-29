@@ -8,6 +8,7 @@ use App\Models\SkillsRitual;
 use App\Models\Inventory;
 use App\Models\Expertise;
 use App\Models\Nex;
+use App\Models\Element;
 use App\Models\ClassType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -33,7 +34,9 @@ class AgentsController extends Controller
 
         $class = ClassType::all();
 
-        return view('agent.add', compact(['expertise', 'nex', 'class']));
+        $element = Element::all();
+
+        return view('agent.add', compact(['expertise', 'nex', 'class', 'element']));
     }
     public function addAgent(Request $r) {
         $r->validate([
@@ -68,11 +71,13 @@ class AgentsController extends Controller
 
         $class = ClassType::all();
 
+        $element = Element::all();
+
         $attack = Attack::where('agent_id', $id)->get(['id', 'weapon', 'test', 'damage', 'special']);
         $SkillsRitual = SkillsRitual::where('agent_id', $id)->get(['id', 'skill_name', 'cost', 'page', 'description']);
         $inventory = Inventory::where('agent_id', $id)->get(['id', 'item', 'category', 'weight']);
 
-        return view('agent.update', ['class' => $class, 'nex' => $nex, 'agent' => $post, 'expertise' => $exp, 'id' => $id, 'attack' => $attack, 'SkillsRitual' => $SkillsRitual, 'inventory' => $inventory]);
+        return view('agent.update', ['class' => $class, 'nex' => $nex, 'agent' => $post, 'expertise' => $exp, 'id' => $id, 'attack' => $attack, 'SkillsRitual' => $SkillsRitual, 'inventory' => $inventory, 'element' => $element]);
     }
 
     public function updateAgent(Request $r) {
@@ -198,6 +203,20 @@ class AgentsController extends Controller
         });
 
         return redirect(route('updateAgent', ['id' => $r->id]));
+    }
+
+    public function deleteAgent(Request $r) {
+        $post = Agent::find($r->id);
+
+        DB::transaction(function () use ($r, $post) {
+            if($post){ // -----> Só o post já serve de validação de existencia, pq ele já buscou e retornou se tem ou nao (Bool)
+                $post->delete();
+            } else {
+                return redirect(route('updateAgent', ['id' => $r->id]));
+            }
+        });
+
+        return redirect(route('agent'));
     }
 
     public function deleteAtk(Request $r) {
