@@ -87,7 +87,12 @@ class ProfileController extends Controller
             $img = 'img/user.jpg';
         }
 
-        return view('profile.profile', compact(['id', 'agents', 'user', 'img', 'nex', 'class', 'element']));
+        if(Auth::user()->id == $id) {
+            return view('profile.profile', compact(['id', 'agents', 'user', 'img', 'nex', 'class', 'element']));
+        } else {
+            return redirect(route('home'));
+        }
+
 
     }
 
