@@ -8,7 +8,7 @@
                 @csrf
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xs-12">
                     <div class="container-a">
-                        <div class="round-img-frame">
+                        <div class="round-img-frame" id="img_frame">
                             <img class="round-img" src="{{ asset($img) }}" alt="">
                             <label for="user_img" class="img-btn"><i class="fa-solid fa-pencil"></i></label>
                             <input type="file" name="user_img" class="user-img"/>
@@ -36,7 +36,7 @@
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xs-4">
                             <label>Favorite element</label>
                             <div class="form-group">
-                                <select name="fav_element" class="input_atk input_atk-top input_sel">
+                                <select name="fav_element" onchange="loadAll()" class="input_atk input_atk-top input_sel" id="fav_element">
                                     @foreach ($element as $e)
                                         <option {{$user->fav_element == $e->id ? "selected" : ""}} value="{{$e->id}}">{{$e->element}}</option>
                                     @endforeach

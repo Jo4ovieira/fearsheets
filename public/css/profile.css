@@ -42,7 +42,6 @@ label {
     margin: -146px 0 0 -145px;
 }
 .round-img-frame {
-    background-color: #ff5656;
     width: 300px;
     height: 300px;
     border-radius: 100%;
@@ -50,6 +49,21 @@ label {
     top: 50%;
     left: 50%;
     margin: -165px 0 0 -155px;
+}
+.img-frame-color-blood {
+    background-color: #ff5656;
+}
+.img-frame-color-energy {
+    background-color: #3cfa35;
+}
+.img-frame-color-knowledge {
+    background-color: #fab624;
+}
+.img-frame-color-death {
+    background-color: #16081a;
+}
+.img-frame-color-fear {
+    background-color: #f1e7e7;
 }
 .agent-pad {
     display: block;
